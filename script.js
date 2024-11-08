@@ -23,7 +23,7 @@ formElem.addEventListener("submit", function (event) {
 
     usernameElem.innerHTML = username;
     ageElem.innerHTML = age;
-    kmElem.innerHTML = km;
+
 
     const fullPrice = km * 0.21;
     console.log(fullPrice)
@@ -33,9 +33,9 @@ formElem.addEventListener("submit", function (event) {
     let result;
 
     if (age < 18) {
-        result = price20.toFixed(2);
+        result = `Prezzo scontato:${price20.toFixed(2)}`;
     } else if (age >= 65) {
-        result = price40.toFixed(2);
+        result = `Prezzo scontato:${price40.toFixed(2)}`;
     } else {
         result = fullPrice.toFixed(2);
     }
@@ -43,6 +43,11 @@ formElem.addEventListener("submit", function (event) {
     priceElem.innerHTML = result + "&#8364";
     cardElem.classList.remove("d-none");
     formElem.reset();
-
+    let number = ""
+    for (let i = 0; i < 1; i++) {
+        number = Math.floor(Math.random() * 10) + 1
+        
+    }
+    kmElem.innerHTML = number;
 }
 )
