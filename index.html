@@ -10,15 +10,52 @@
 </head>
 
 <body>
-    <label for="age">Inserire età passegero/a</label>
-<input type="email" id="age" name="age">
-
-<label for="km">Km da percorrere</label>
-<input  type="text" id="km" name="km">
-
-<button id="btn-submit" type="submit">Genera</button>
+    <main class="bg-danger">
+        <div class="container">
+            <div class="row ">
 
 
+                <form id="user-form" action="">
+                    <div class="col-md-4">
+                        <label class="form-label" for="username">Nome e Cognome</label>
+                        <input class="form-control" type="username" id="username" name="username" autocomplete="off">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="age">Inserire età passegero/a</label>
+                        <input class="form-control" type="text" id="age" name="age" autocomplete="off">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label" for="km">Km da percorrere</label>
+                        <input class="form-control" type="text" id="km" name="km" autocomplete="off">
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button id="btn-submit" type="submit">Genera</button>
+                </div>
+            </div>
+            </form>
+
+
+
+            <div class="col-12 ">
+                <div class="card d-none">
+                    <div class="card-header">
+                        <div id="company-card">Dettaglio passeggero</div>
+                    </div>
+                    <div class="card-body">
+                        <h2 id="username-card"></h2>
+                        <p id="age-card"></p>
+                        <p id="km-card"></p>
+                        <p id="price-card"></p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </main>
     <script src="./script.js"></script>
 </body>
 
