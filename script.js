@@ -7,24 +7,23 @@ const usernameElem = document.getElementById("username-card");
 const ageElem = document.getElementById("age-card");
 const kmElem = document.getElementById("km-card");
 const priceElem = document.getElementById("price-card");
-const cardElem = document.querySelector(".card");
-const formElem = document.getElementById("user-form")
+const cardElem = document.getElementById("table");
+const formElem = document.getElementById("user-form");
+const TicketElem = document.querySelector(".biglietto");
 
 // ESECUZIONE
-
-
 
 formElem.addEventListener("submit", function (event) {
     event.preventDefault();
     const username = usernameInput.value.trim();
     const age = parseInt(ageInput.value.trim());
     const km = parseInt(kmInput.value.trim());
-    console.log(typeof age, km)
+    console.log(typeof age, km);
 
     usernameElem.innerHTML = username;
     ageElem.innerHTML = age;
 
-
+    // calcolo biglietto
     const fullPrice = km * 0.21;
     console.log(fullPrice)
     const price20 = fullPrice - (fullPrice * 0.2); // 0.2 = 20%
@@ -41,12 +40,16 @@ formElem.addEventListener("submit", function (event) {
     }
     console.log(result)
     priceElem.innerHTML = result + "&#8364";
+    // rimozione d-none
     cardElem.classList.remove("d-none");
+    TicketElem.classList.remove("d-none");
+    // reset input
     formElem.reset();
+    // numero random carrozza
     let number = ""
     for (let i = 0; i < 1; i++) {
         number = Math.floor(Math.random() * 10) + 1
-        
+
     }
     kmElem.innerHTML = number;
 }
